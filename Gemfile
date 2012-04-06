@@ -22,6 +22,14 @@ end
 gem 'jquery-rails'
 gem 'omniauth'
 
+group :test do
+  gem 'rspec-rails', '>=2.8.0rc1'
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'shoulda'
+  gem 'factory_girl_rails', '1.4.0'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
