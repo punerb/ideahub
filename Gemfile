@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',     :git => 'git://github.com/rails/rails.git', :branch => '3-2-stable'
 gem 'journey',   :git => 'git://github.com/rails/journey.git'
-gem 'arel',      :git => 'git://github.com/rails/arel.git'
+gem 'arel',      '3.0.2'
 
 gem 'mysql2'
 gem 'bootstrap-sass'

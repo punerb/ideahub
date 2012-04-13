@@ -1,5 +1,5 @@
-TWITTER_KEY= '87rSkJ7tzINtNOefJ6FfGQ'
-TWITTER_SECRET= 'TfXgJgKUo35olGwHNAY36HcMx2HhlNUHMSiNCXXjo'
+TWITTER_KEY= 'lBzoa7p7BDWR98IOsmcQQ'
+TWITTER_SECRET= 'ur4TjBbwGOPJ1ieY9oFHK5z6w6bhiUMVgrEQxsVf4hY'
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   #provider :developer unless Rails.env.production?

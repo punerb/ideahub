@@ -10,10 +10,32 @@ Ideahub::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
-  match '/auth/:provider/callback', to: 'sessions#create'
+# Omniauth pure
+  match "/signin" => "services#signin"
+  match "/signout" => "services#signout"
 
   resources :ideas
+  match '/auth/:service/callback' => 'services#create' 
+  match '/auth/failure' => 'services#failure'
 
+  resources :services, :only => [:index, :create, :destroy] do
+    collection do
+      get 'signin'
+      get 'signout'
+      get 'signup'
+      post 'newaccount'
+      get 'failure'
+    end
+  end
+
+  # used for the demo application only
+  resources :users, :only => [:index] do
+    collection do
+      get 'test'
+    end
+  end
+   
+>>>>>>> 456f06e69ab2f464563a5b273036260169b20ec7
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
