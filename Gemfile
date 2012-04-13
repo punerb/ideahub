@@ -21,6 +21,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :test do
   gem 'rspec-rails', '>=2.8.0rc1'
