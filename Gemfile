@@ -2,9 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails',     :git => 'git://github.com/rails/rails.git', :branch => '3-2-stable'
 gem 'journey',   :git => 'git://github.com/rails/journey.git'
-gem 'arel',      :git => 'git://github.com/rails/arel.git'
+gem 'arel',      '3.0.2'
 
 gem 'mysql2'
+gem 'bootstrap-sass'
 
 
 # Gems used only for assets and not required
@@ -20,6 +21,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'haml'
+gem 'haml-rails'
 
 group :test do
   gem 'rspec-rails', '>=2.8.0rc1'
