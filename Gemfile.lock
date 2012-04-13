@@ -80,6 +80,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.2.7)
     bootstrap-sass (2.0.2)
     builder (3.0.0)
     coffee-script (2.2.0)
@@ -98,6 +99,10 @@ GEM
       railties (>= 3.0.0)
     faker (1.0.1)
       i18n (~> 0.4)
+    faraday (0.7.6)
+      addressable (~> 2.2)
+      multipart-post (~> 1.1)
+      rack (~> 1.1)
     hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.0)
@@ -111,6 +116,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.2.0)
+    multipart-post (1.1.5)
     mysql2 (0.3.11)
     oauth (0.4.5)
     omniauth (1.0.3)
@@ -151,6 +157,7 @@ GEM
       shoulda-matchers (~> 1.0.0)
     shoulda-context (1.0.0)
     shoulda-matchers (1.0.0)
+    simple_oauth (0.1.5)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -160,6 +167,11 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (2.2.0)
+      activesupport (>= 2.3.9, < 4)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.1)
     tzinfo (0.3.32)
     uglifier (1.2.4)
       execjs (>= 0.3.0)
@@ -184,4 +196,5 @@ DEPENDENCIES
   rspec-rails (>= 2.8.0rc1)
   sass-rails!
   shoulda
+  twitter
   uglifier (>= 1.0.3)
