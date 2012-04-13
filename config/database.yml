@@ -35,7 +35,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: ideahub_production
+  database: ideahub_development
   pool: 5
   username: root
   password:
