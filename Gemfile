@@ -5,6 +5,7 @@ gem 'journey',   :git => 'git://github.com/rails/journey.git'
 gem 'arel',      :git => 'git://github.com/rails/arel.git'
 
 gem 'mysql2'
+gem 'bootstrap-sass'
 
 
 # Gems used only for assets and not required
