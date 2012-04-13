@@ -1,6 +1,4 @@
 Ideahub::Application.routes.draw do
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -10,8 +8,36 @@ Ideahub::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
-  match '/auth/:provider/callback', to: 'sessions#create'
+  # Omniauth
+  match "/signin" => redirect("/auth/twitter")
+  match "/signout" => "services#signout"
+  
+  # Omniauth pure
+  # Future use
+  # match "/signin" => "services#signin"
+  # match "/signout" => "services#signout"
 
+  match '/auth/:service/callback' => 'services#create' 
+  match '/auth/failure' => 'services#failure'
+
+  resources :ideas
+  resources :services, :only => [:index, :create, :destroy] do
+    collection do
+      get 'signin'
+      get 'signout'
+      get 'signup'
+      post 'newaccount'
+      get 'failure'
+    end
+  end
+
+  # used for the demo application only
+  resources :users, :only => [:index] do
+    collection do
+      get 'test'
+    end
+  end
+   
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
@@ -51,10 +77,4 @@ Ideahub::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'designs#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

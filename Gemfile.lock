@@ -148,6 +148,9 @@ GEM
       rspec (~> 2.9.0)
     sass (3.1.15)
     shoulda-matchers (1.0.0)
+    simple_form (2.0.1)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -183,4 +186,5 @@ DEPENDENCIES
   rspec-rails (>= 2.8.0rc1)
   sass-rails!
   shoulda-matchers
+  simple_form
   uglifier (>= 1.0.3)

@@ -6,7 +6,7 @@ gem 'arel',      '3.0.2'
 
 gem 'mysql2'
 gem 'bootstrap-sass'
-
+gem 'simple_form'
 
 # Gems used only for assets and not required
 # in production environments by default.
