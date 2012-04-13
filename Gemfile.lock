@@ -75,6 +75,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     arel (3.0.2)
+    bootstrap-sass (2.0.2)
     builder (3.0.0)
     coffee-script (2.2.0)
       coffee-script-source
