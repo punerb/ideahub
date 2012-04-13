@@ -1,0 +1,20 @@
+%section#head
+  %section#user
+    - if user_signed_in?
+      %nav#nav_user
+        %ul
+          %span= #current_user.email
+          %li= link_to "Sign out", signout_services_path
+    - else
+      %nav#nav_user
+        %ul
+          %span Sign in with:
+          %li
+            = link_to 'Twitter', "/auth/twitter"
+  %h1
+    Omniauth
+    %sup pure
+%section#body
+  %section#flash
+    - flash.each do |key, value|
+      %div{:class => "flash #{key} round"}= value
