@@ -37,10 +37,7 @@ Ideahub::Application.routes.draw do
       get 'test'
     end
   end
-<<<<<<< Updated upstream
    
-=======
-
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
@@ -79,6 +76,5 @@ Ideahub::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
->>>>>>> Stashed changes
   root :to => 'designs#index'
 end
