@@ -31,7 +31,7 @@ group :test do
   gem 'rspec-rails', '>=2.8.0rc1'
   gem 'faker'
   gem 'database_cleaner'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'factory_girl_rails', '1.4.0'
 end
 

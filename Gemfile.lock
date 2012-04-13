@@ -153,10 +153,6 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.9.0)
     sass (3.1.15)
-    shoulda (3.0.1)
-      shoulda-context (~> 1.0.0)
-      shoulda-matchers (~> 1.0.0)
-    shoulda-context (1.0.0)
     shoulda-matchers (1.0.0)
     simple_form (2.0.1)
       actionpack (~> 3.0)
@@ -201,7 +197,7 @@ DEPENDENCIES
   rails!
   rspec-rails (>= 2.8.0rc1)
   sass-rails!
-  shoulda
+  shoulda-matchers
   simple_form
   twitter
   uglifier (>= 1.0.3)
