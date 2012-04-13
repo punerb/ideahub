@@ -12,6 +12,8 @@ Ideahub::Application.routes.draw do
 
   match '/auth/:provider/callback', to: 'sessions#create'
 
+  resources :ideas
+
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

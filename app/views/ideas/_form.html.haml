@@ -1,0 +1,9 @@
+= simple_form_for @idea, :html => { :class => 'span6 form-horizontal' }, :defaults => { :input_html => { :class => 'input-xlarge span6' } } do |f|
+  %fieldset
+    %legend Details
+    = f.input :title
+    = f.input :description, :input_html => { :rows => 8 }
+    = f.input :categories
+    .form-actions
+      = f.button :submit, :class => 'btn btn-primary btn-large'
+
