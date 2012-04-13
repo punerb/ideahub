@@ -14,22 +14,14 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{:href => "#"} Project name
+          %a.brand{:href => "#"} IdeaHub
           .nav-collapse
             %ul.nav
-              %li.active
-                %a{:href => "#"} Home
-              %li
-                %a{:href => "#about"} About
-              %li
-                %a{:href => "#contact"} Contact
             %ul.nav.pull-right
               - if user_signed_in?
                 %li= link_to "Sign out", signout_path, :class => :'pull-right'
               - else
-                %li= link_to "Sign In", signin_path, :class => :'pull-right'
-
-
-          / /.nav-collapse
+                %li
+                  = link_to "Sign In", signin_path, :class => :'pull-right'
     .container
       = yield
