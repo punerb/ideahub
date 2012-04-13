@@ -23,6 +23,8 @@ end
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'haml'
+gem 'haml-rails'
 
 group :test do
   gem 'rspec-rails', '>=2.8.0rc1'
