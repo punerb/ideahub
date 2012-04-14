@@ -123,6 +123,7 @@ GEM
       omniauth (~> 1.0)
     omniauth-twitter (0.0.9)
       omniauth-oauth (~> 1.0)
+    pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -188,6 +189,7 @@ DEPENDENCIES
   newrelic_rpm
   omniauth
   omniauth-twitter
+  pg
   rails!
   rspec-rails (>= 2.8.0rc1)
   sass-rails!
