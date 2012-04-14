@@ -113,6 +113,7 @@ GEM
     mime-types (1.18)
     multi_json (1.2.0)
     mysql2 (0.3.11)
+    newrelic_rpm (3.3.3)
     oauth (0.4.5)
     omniauth (1.0.3)
       hashie (~> 1.2)
@@ -184,6 +185,7 @@ DEPENDENCIES
   journey!
   jquery-rails
   mysql2
+  newrelic_rpm
   omniauth
   omniauth-twitter
   rails!
