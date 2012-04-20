@@ -1,4 +1,4 @@
-TWITTER_KEY= Setting.consumer_key
+TWITTER_KEY= Setting.consumer_key 
 TWITTER_SECRET= Setting.consumer_secret
 
 Rails.application.config.middleware.use OmniAuth::Builder do

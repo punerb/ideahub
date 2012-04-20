@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Setting.consumer_key = 'your twitter consumer key'
+Setting.consumer_secret = 'your twitter consumer secret'
+Setting.oauth_token = 'your twitter access token'
+Setting.oauth_token_secret = 'your twitter access token secret'
