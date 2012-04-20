@@ -6,6 +6,7 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    = yield :head
   %body
     .navbar.navbar-fixed-top
       .navbar-inner
@@ -22,6 +23,6 @@
                 %li= link_to "Sign out", signout_path, :class => :'pull-right'
               - else
                 %li
-                  = link_to image_tag("/assets/twitter-login.png"), signin_path, :class => :'pull-right'
+                  = link_to image_tag("twitter-login.png", :class => 'twitter-image'), signin_path, :class => :'pull-right'
     .container
       = yield
