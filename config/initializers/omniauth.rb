@@ -1,5 +1,5 @@
-TWITTER_KEY= Setting.consumer_key 
-TWITTER_SECRET= Setting.consumer_secret
+TWITTER_KEY = Setting.consumer_key rescue ''
+TWITTER_SECRET = Setting.consumer_secret rescue ''
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   #provider :developer unless Rails.env.production?
