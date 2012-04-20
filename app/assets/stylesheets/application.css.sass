@@ -11,14 +11,21 @@
  *= require_self
  *= require_tree .
  */
-$baseFontSize: 17px
+$baseFontSize: 16px
 
 @import "bootstrap"
-@import "bootstrap-responsive"
 
 body
   padding-top: 60px
   padding-bottom: 40px
+  margin: 0 auto
 
-.form-actions
-  background-color: white
+  .container
+    width: 940px
+
+.ideahub.form-actions
+  background-color: #F5F5F5
+  border: none
+
+input.span8, .uneditable-input.span8
+  height: 30px
