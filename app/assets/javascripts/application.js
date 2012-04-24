@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+    $('.twitter-image').tooltip({placement: 'bottom'});
+});
