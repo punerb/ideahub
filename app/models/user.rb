@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email
+  attr_accessible :name, :email, :screen_name
   has_many :services, :dependent => :destroy
   
   def tweet(msg)
