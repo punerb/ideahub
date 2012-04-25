@@ -7,3 +7,7 @@
   .participlate
     %a.btn.btn-success.btn-large{href: "#"} Create Idea
     %a.btn.btn-info.btn-large{href: "#"} Browse Ideas
+
+.container.idea-index
+  %div
+    = render partial: 'ideas/idea', collection: @ideas
