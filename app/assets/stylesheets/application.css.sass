@@ -9,6 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.core
+ += require jquery.ui.slider
+ *= require jquery.ui.datepicker
+ *= require jquery.ui.timepicker
  *= require_tree .
  */
 $baseFontSize: 16px
@@ -37,4 +41,5 @@ body
 
 input.span8, .uneditable-input.span8
   height: 30px
-
+.hide
+  display: none
