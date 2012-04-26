@@ -4,7 +4,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title Ideahub
     = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    = javascript_include_tag "application", 'jquery.ui.core', 'jquery.ui.datepicker', 'jquery-ui-1.8.19.custom', 'jquery.ui.widget', 'jquery.ui.mouse',  'jquery.ui.slider', 'jquery-ui-timepicker-addon'
     = csrf_meta_tags
     = yield :head
   %body

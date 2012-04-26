@@ -7,3 +7,4 @@
   .participlate
     %a.btn.btn-success.btn-large{href: "#"} Create Idea
     %a.btn.btn-info.btn-large{href: "#"} Participate
+= link_to "Schedule #{@idea.title}", new_idea_schedule_url(@idea.id)
