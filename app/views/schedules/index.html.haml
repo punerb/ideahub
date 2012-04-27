@@ -1,0 +1,9 @@
+.row.well
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Idea
+        %th Scheduled at
+        %th Location
+    %tbody
+      =render :partial => :schedule, :collection => @schedules

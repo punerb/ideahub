@@ -119,6 +119,7 @@ GEM
     multi_json (1.2.0)
     multipart-post (1.1.5)
     mysql2 (0.3.11)
+    newrelic_rpm (3.3.3)
     oauth (0.4.5)
     omniauth (1.1.0)
       hashie (~> 1.2)
@@ -128,6 +129,7 @@ GEM
       omniauth (~> 1.0)
     omniauth-twitter (0.0.9)
       omniauth-oauth (~> 1.0)
+    pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -192,8 +194,10 @@ DEPENDENCIES
   journey!
   jquery-rails
   mysql2
+  newrelic_rpm
   omniauth
   omniauth-twitter
+  pg
   rails!
   rspec-rails (>= 2.8.0rc1)
   sass-rails!
