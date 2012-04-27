@@ -2,13 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$backgroundImage: '/assets/main.jpg'
+$ideaBoxMarginLeft: 10px
+
 body
-  background-image: url(/main.jpg)
+  padding-top: 60px
+  padding-bottom: 40px
+  margin: 0 auto
+  background-image: url($backgroundImage)
+
+  .navbar
+    background-color: #000
+    .container
+      border-bottom: 1px solid #FFD700
+
+  .container
+    width: 940px
+    .brand
+      color: #FFD700 
+      font-size: 30px
+      font-weight: bold
+      padding-bottom: 5px
+    .brand:hover
+      color: #777
+
+.ideahub.form-actions
+  background-color: #F5F5F5
+  border: none
+
+.twitter-image
+  width: 90px
+  margin-top: 15px
+  background: url('/assets/twitter_logo_top_bar.png') no-repeat 0 0
+
+.strip-background
+  background-image: url($backgroundImage)
+  background-color: #444
+  font-size: 20px
+  font-weight: bold
+
+input.span8, .uneditable-input.span8
+  height: 30px
 
 .masthead
-  margin: 50px 0
+  margin: 20px 0
   padding: 25px 0 40px 0
   text-align: center
+  background-color: #F5F5F5
   h1 
     margin-bottom: 18px
     font-size: 85px
@@ -21,11 +61,47 @@ body
     font-size: 25px
     line-height: 36px
   a.btn-large
-    color: #222
+    color: #333
     font-size: 30px
-    font-weight: normal
+    font-weight: lighter
     padding: 14px 24px
   a.btn-info
     margin-left: 15px
 
-  
+.idea-index
+  .grid
+    width: 215px
+    height: 220px
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
+    display: inline
+    float: left
+    position: relative
+    margin: 10px 25px 10px 0
+    border-radius: 5px
+    background-color: #F5F5F5 
+    a
+      min-height: 190px
+      display: block
+      text-decoration: none
+      color: teal
+      h2, h6, p
+        padding-left: $ideaBoxMarginLeft
+      h2
+        color: #555
+      p 
+        font-size: 14px
+        font-weight: bold
+        margin-top: 5px
+        color: #000
+    .detail
+      margin-left: 10px
+      font-size: 12px
+  .grid:hover
+    background-color: #DDD
+  .grid-0
+    margin-right: 0
+  .title
+    border-bottom: 5px solid #0080B0
+

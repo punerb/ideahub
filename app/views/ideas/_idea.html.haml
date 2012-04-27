@@ -1,0 +1,8 @@
+%div.grid{class: "grid-#{idea.id % 4}"}
+  %a{href: '#'}
+    %h2{class: "title"}= idea.title
+    %h6= idea.categories.first.name
+    %p= idea.description 
+  %span.detail
+    %i.icon-calendar>
+    6 Apr'12

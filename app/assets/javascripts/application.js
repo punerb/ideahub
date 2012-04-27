@@ -15,3 +15,7 @@
 //= require bootstrap
 //= require bootstrap-modal
 //= require_tree .
+
+$(document).ready(function(){
+    $('.twitter-image').tooltip({placement: 'bottom'});
+});
