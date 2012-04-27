@@ -9,8 +9,36 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.core
+ += require jquery.ui.slider
+ *= require jquery.ui.datepicker
+ *= require jquery.ui.timepicker
  *= require_tree .
  */
 $baseFontSize: 16px
 
 @import "bootstrap"
+
+body
+  padding-top: 60px
+  padding-bottom: 40px
+  margin: 0 auto
+
+  .container
+    width: 940px
+    .brand
+      color: #FFD700 
+      font-size: 30px
+      font-weight: bold
+
+.ideahub.form-actions
+  background-color: #F5F5F5
+  border: none
+
+.twitter-image
+  width: 100px
+
+input.span8, .uneditable-input.span8
+  height: 30px
+.hide
+  display: none
