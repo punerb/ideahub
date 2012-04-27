@@ -27,9 +27,12 @@ class IdeasController < ApplicationController
   end
 
   def participate
-    @user = User.find(params[:user_id])
-    IdeaUser.create(:idea_id => @idea.id, :user_id => current_user.id)
-    @ideas = Idea.includes(:users)
+    if @idea.users.include?(current_user)
+      flash[:error] = 'You are already participating this idea'
+    else
+      @idea.users << current_user
+    end
+    redirect_to :action => :index
   end
 
   private
