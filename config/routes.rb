@@ -20,7 +20,11 @@ Ideahub::Application.routes.draw do
   match '/auth/:service/callback' => 'services#create' 
   match '/auth/failure' => 'services#failure'
 
-  resources :ideas
+  resources :ideas do
+    get 'participate'
+  end
+  match '/ideas/:id/participate/:user_id' => 'ideas#participate', :as => :participate
+  
   resources :services, :only => [:index, :create, :destroy] do
     collection do
       get 'signin'

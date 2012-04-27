@@ -1,0 +1,104 @@
+p 
+  margin: 0 0 9px
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 15px
+  line-height: 18px
+
+h1 
+  font-weight: bold
+  font-size: 20px
+  color: #333
+
+h2 
+  font-weight: bold
+  font-size: 20px
+  color: #0084b4
+
+.grid-1, .grid-2, .grid-3, .grid-4 
+  display: inline
+  float: left
+  position: relative
+  margin-left: 10px
+  margin-right: 10px
+  
+.grid .grid-1 
+  width: 220px
+
+.clearfix 
+  *zoom: 1
+
+#wrapper 
+  position: relative
+  width: 960px
+  margin: 0 auto
+  padding: 20px 0
+
+.clearfix:before, .clearfix:after 
+  content: ""
+  display: table
+
+.clearfix:after 
+  clear: both
+
+li.repo 
+  height: 250px
+
+li.repo > a 
+  display: block
+  width: 100%
+  height: 100%
+  overflow: hidden
+  text-decoration: none
+  color: inherit
+
+li.repo a:hover 
+  background: #efefef
+  background: rgba(0, 0, 0, 0.05)
+
+
+li.repo h2, li.repo h3, li.repo p 
+  margin: 10px 15px
+
+
+li.repo h2 
+  margin-bottom: 2px
+  max-width: 160px
+  overflow: hidden
+
+
+li.repo h3 
+  font-size: 11px
+  margin-top: 2px
+  margin-bottom: 15px
+  color: #999
+
+.repo:after 
+  content: ''
+  position: absolute
+  right: 0
+  top: 0
+  width: 0
+  height: 0
+  border-bottom: 50px solid transparent
+  border-left: 50px solid transparent
+  border-right: 50px solid #0080b0
+  pointer-events: none
+
+
+.repo.javascript:after 
+  border-right-color: #333
+
+div.header, li.repo 
+  background: white
+  background: rgba(255, 255, 255, 0.7)
+  -moz-box-shadow:    0px 0px 5px 1px rgba(0, 0, 0, 0.1)
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
+  box-shadow:         0px 0px 5px 1px rgba(0, 0, 0, 0.1)
+  margin-bottom: 20px
+
+.participate
+  float: right
+
+.idea
+  cursor: pointer 
+  cursor: hand
