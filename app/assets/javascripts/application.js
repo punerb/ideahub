@@ -13,10 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-<<<<<<< HEAD
-=======
 //= require bootstrap-modal
->>>>>>> d414268b016cdec40c5cd2da471051385361dcd8
 //= require_tree .
 
 $(document).ready(function(){
