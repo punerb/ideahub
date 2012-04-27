@@ -1,0 +1,12 @@
+%ol
+  - @ideas.each do |idea|
+    %li.repo.grid-1{:id => "#{idea.id}"}
+      %div.idea{:link => '#'}
+        %h2= idea.title
+        %p= idea.description
+        %h3 #{idea.users.count} Participating....
+        - unless idea.users.include?(current_user)
+          = link_to 'Participate', idea_participate_path(idea.id), :class => 'participate btn'
+
+:javascript
+  $('.idea').click(function(){ window.location = $(this).attr('link') })

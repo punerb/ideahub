@@ -16,10 +16,16 @@
           %ul.nav.pull-right
             - if user_signed_in?
               %li
+                = link_to "Ideas", ideas_path, :class => :'pull-right'
+              %li
                 = link_to "Sign out", signout_path, class: 'pull-right'
             - else
               %li
                 = link_to '', signin_path, class: 'twitter-image pull-right', title: 'Sign in with Twitter'
-
-    .container
-      = yield
+    - if params[:controller] == 'ideas' && params[:action] == 'index'  
+      .grid.clearfix#wrapper
+        = yield
+    -else
+      .container
+        = yield
+      
