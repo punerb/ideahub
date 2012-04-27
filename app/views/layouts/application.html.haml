@@ -9,22 +9,19 @@
     = yield :head
   %body
     .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => "#"} IdeaHub
-          .nav-collapse
-            %ul.nav
-            %ul.nav.pull-right
-              - if user_signed_in?
-                %li= link_to "Ideas", ideas_path, :class => :'pull-right'
-                %li= link_to "Sign out", signout_path, :class => :'pull-right'
-              - else
-                %li
-                  = link_to "Sign In", signin_path, :class => :'pull-right'
+      .container
+        %a.brand{:href => '/'} IdeaHub
+        .nav-collapse
+          %ul.nav
+          %ul.nav.pull-right
+            - if user_signed_in?
+              %li
+                = link_to "Ideas", ideas_path, :class => :'pull-right'
+              %li
+                = link_to "Sign out", signout_path, class: 'pull-right'
+            - else
+              %li
+                = link_to '', signin_path, class: 'twitter-image pull-right', title: 'Sign in with Twitter'
     - if params[:controller] == 'ideas' && params[:action] == 'index'  
       .grid.clearfix#wrapper
         = yield
