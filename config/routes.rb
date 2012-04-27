@@ -8,11 +8,8 @@ Ideahub::Application.routes.draw do
   match '/auth/failure' => 'services#failure'
 
   resources :ideas do
-    get 'participate'
+    get 'participate', :on => :member
   end
-  
-  match '/ideas/:id/participate/:user_id' => 'ideas#participate', :as => :participate
-  
   resources :schedules
   
   # used for the demo application only

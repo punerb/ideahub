@@ -6,7 +6,7 @@
         %p= idea.description
         %h3 #{idea.users.count} Participating....
         - unless idea.users.include?(current_user)
-          = link_to 'Participate', idea_participate_path(idea.id), :class => 'participate btn'
+          = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn'
 
 :javascript
   $('.idea').click(function(){ window.location = $(this).attr('link') })
