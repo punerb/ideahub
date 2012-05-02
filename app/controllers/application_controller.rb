@@ -25,6 +25,10 @@ class ApplicationController < ActionController::Base
     end
   end    
 
+  def admin?
+    current_user.is_admin rescue false
+  end
+
   def invalid_url!
     flash[:notice] = 'Invalid URL !!!'
     redirect_to root_url and return

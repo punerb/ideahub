@@ -86,15 +86,36 @@ input.span8, .uneditable-input.span8
       display: block
       text-decoration: none
       color: teal
-      h2, h6, p
+      h2, h6, h3, p
         padding-left: $ideaBoxMarginLeft
       h2
         color: #555
+        height: 41px
       p 
         font-size: 14px
         font-weight: bold
         margin-top: 5px
         color: #000
+        height: 85px
+      h2
+        i.favorite
+          border-bottom: 16px solid transparent
+          border-top: 25px solid green
+          border-right: 16px solid green
+          border-left: 25px solid transparent
+          border-top-right-radius: 5px
+          height: 0
+          width: 0
+          float: right
+          position: absolute
+          top: 0
+          right: 0
+    a.participate
+      min-height: 0px
+    a.participate:hover
+      min-height: 0px
+      color: #FFF
+      background-color: teal
     .detail
       margin-left: 10px
       font-size: 12px

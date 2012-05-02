@@ -1,8 +1,13 @@
-%div.grid{class: "grid-#{idea.id % 4}"}
+.grid{class: "grid-#{idea.id % 4}", id: "idea-#{idea.id}"}
   %a{href: '#'}
-    %h2{class: "title"}= idea.title
-    %h6= idea.categories.first.try(:name)
-    %p= idea.description 
+    %h2{class: "title"}
+      = idea.title.truncate(20)
+      %i{class: "#{'favorite' if idea.users.include?(current_user)}"}
+    %h6= idea.categories.first.try(:name) or "Category"
+    %p= idea.description.truncate(125)
+    %h3= pluralize(idea.users.count, "participant")
+    - unless idea.users.include?(current_user) 
+      = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn', :remote => true
   %span.detail
     %i.icon-calendar>
     6 Apr'12

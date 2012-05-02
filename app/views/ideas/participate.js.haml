@@ -1,0 +1,3 @@
+$('#idea-#{@idea.id} a h2 i').addClass('favorite')
+$('#idea-#{@idea.id} a.participate.btn').remove()
+$('#idea-#{@idea.id} h3').html("#{pluralize(@idea.users.count, "participant")}")

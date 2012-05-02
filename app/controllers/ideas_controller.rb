@@ -3,7 +3,7 @@ class IdeasController < ApplicationController
   before_filter :get_idea, :only => [:update, :edit, :show, :participate]
 
   def index
-    @ideas = Idea.includes(:users)
+    @ideas = Idea.includes(:users).includes(:categories)
   end
   
   def create
@@ -32,7 +32,6 @@ class IdeasController < ApplicationController
     else
       @idea.users << current_user
     end
-    redirect_to :action => :index
   end
 
   private
