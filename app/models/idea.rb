@@ -10,4 +10,10 @@ class Idea < ActiveRecord::Base
   validates :user_id, :title, :description, :presence => true
   
   attr_accessible :title, :description, :user_id, :category_ids
+
+  before_save :format_description
+
+  def format_description
+    self.description = RedCloth.new(description, [:lite_mode]).to_html
+  end
 end

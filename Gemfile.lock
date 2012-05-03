@@ -74,6 +74,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    RedCloth (4.2.9)
     addressable (2.2.7)
     arel (3.0.2)
     bootstrap-sass (2.0.2)
@@ -201,6 +202,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   arel (= 3.0.2)
   bootstrap-sass
   coffee-rails!
