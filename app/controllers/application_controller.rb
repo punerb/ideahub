@@ -4,11 +4,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :user_signed_in?
 
-  def tweet(msg)
-    user = Twitter::Client.new(oauth_token: OAUTH_TOKEN, oauth_token_secret: OAUTH_TOKEN_SECRET)
-    user.update(msgmsg)
-  end
-
   private  
   def current_user  
     @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]  
@@ -21,7 +16,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     unless current_user
       flash[:error] = 'You need to sign in before accessing this page!'
-      redirect_to signin_services_path
+      redirect_to signin_path
     end
   end    
 

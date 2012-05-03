@@ -9,5 +9,5 @@ class Idea < ActiveRecord::Base
 
   validates :user_id, :title, :description, :presence => true
   
-  attr_accessible :title, :description, :user_id
+  attr_accessible :title, :description, :user_id, :category_ids
 end
