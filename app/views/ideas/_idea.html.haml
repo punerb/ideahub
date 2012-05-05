@@ -4,7 +4,7 @@
       = idea.title.truncate(20)
       %i{class: "#{'favorite' if idea.users.include?(current_user)}"}
     %h6= idea.categories.first.try(:name) or "Category"
-    %p= idea.description.truncate(125)
+    %p= raw idea.description.truncate(125)
     %h3= pluralize(idea.users.count, "participant")
     - unless idea.users.include?(current_user) 
       = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn', :remote => true

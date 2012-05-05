@@ -3,7 +3,8 @@
     %fieldset
       %legend Details
       = f.input :title
+      = render 'formatting_guide'
       = f.input :description, :input_html => { :rows => 8 }
-      =# f.input :categories, :collection => Category.options, :prompt => 'Please Select'
+      = f.input :category_ids, :collection => Category.options, :prompt => 'Please Select', :input_html => {:multiple => true}, :label => 'Categories'
       .form-actions.ideahub
         = f.button :submit, :class => 'btn btn-primary btn-large'
