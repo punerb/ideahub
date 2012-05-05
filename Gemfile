@@ -30,7 +30,7 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem 'haml'
 gem 'haml-rails'
-
+gem 'RedCloth'
 group :test do
   gem 'rspec-rails', '>=2.8.0rc1'
   gem 'faker'
@@ -54,3 +54,8 @@ end
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'newrelic_rpm'
+
+group :development do
+  gem 'heroku'
+  gem 'passenger'
+end

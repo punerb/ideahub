@@ -1,0 +1,29 @@
+#formatting-guide.controls
+  %a#toggle-guide{:href => "#"} How do I format idea description?
+  #guide{:style => "display:none;"}
+    %p
+      You can enrich your description with bold and italic text, and by adding hyperlinks just by using a simple syntax, explained here:
+    %table
+      %tr
+        %th
+          %b If you type this…
+        %th
+          %b …you get this
+      %tr
+        %td _ideahub_
+        %td
+          %em ideahub
+      %tr
+        %td *ideahub*
+        %td
+          %strong ideahub
+      %tr
+        %td +ideahub+
+        %td
+          %u ideahub
+      %tr
+        %td "Ideahub":http://www.ideahub.com
+        %td
+          %a{:href => "http://www.ideahub.com"} Ideahub
+:javascript
+  $('#toggle-guide').click(function() { $('#guide').toggle('fast'); return false; });
