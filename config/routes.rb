@@ -1,7 +1,7 @@
 Ideahub::Application.routes.draw do
 
   # Omniauth
-  match "/signin" => redirect("/auth/twitter")
+  match "/signin" => redirect("/auth/twitter"), :as => :signin_services
   match "/signout" => "services#signout"
   
   match '/auth/:service/callback' => 'services#create' 
