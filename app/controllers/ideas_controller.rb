@@ -31,6 +31,7 @@ class IdeasController < ApplicationController
       flash[:error] = 'You are already participating this idea'
     else
       @idea.users << current_user
+      User.tweet("@#{current_user.screen_name} has just participated to '#{@idea.title}'")
     end
   end
 

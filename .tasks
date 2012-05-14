@@ -1,0 +1,3 @@
+when there is no idea show message with link to create idea
+in home page there displaying ideas: idea has many schedules, if idea has at least one upcoming schedule date then show it on idea block,
+not it is showing statically
