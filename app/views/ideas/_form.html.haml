@@ -3,6 +3,7 @@
     %fieldset
       %legend Details
       = f.input :title
+      = f.input :github, input_html: { value: "http://github.com/" }
       = render 'formatting_guide'
       = f.input :description, :input_html => { :rows => 8 }
       = f.input :category_ids, :input_html => { :class => 'typeahead', :data => { :provide => 'typeahead', :source => Category.all.collect(&:name).to_s }, :value => '', :autocomplete => 'off' }, :label => "Categories"

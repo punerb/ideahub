@@ -9,7 +9,7 @@ class Idea < ActiveRecord::Base
 
   validates :user_id, :title, :description, :presence => true
   
-  attr_accessible :title, :description, :user_id, :category_ids
+  attr_accessible :title, :description, :user_id, :category_ids, :github
 
   before_save :format_description
 

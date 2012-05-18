@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.includes(:users).includes(:categories)
   end
-  
+
   def create
     @idea = Idea.new(params[:idea])
     params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }

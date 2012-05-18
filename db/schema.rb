@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120502102746) do
+ActiveRecord::Schema.define(:version => 20120518193654) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(:version => 20120502102746) do
     t.integer  "idea_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "feather_pages", :force => true do |t|
+    t.string   "name"
+    t.string   "status",     :default => "draft"
+    t.text     "content"
+    t.string   "layout",     :default => "application"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   create_table "idea_categories", :force => true do |t|
@@ -47,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20120502102746) do
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "github"
   end
 
   create_table "schedules", :force => true do |t|

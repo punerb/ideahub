@@ -110,24 +110,31 @@ input.span8, .uneditable-input.span8
           position: absolute
           top: 0
           right: 0
-    a.participate
+    a.participate, a.details
       z-index: 1000
       color: black
       position: absolute
       margin-left: 55px
-      margin-top: -100px
+      margin-top: -70px
       display: none
-    a.participate
       min-height: 0px
+    a.details
+      margin-top: -130px
+      margin-left: 70px
     .detail
       font-weight: bold
       margin-left: 10px
       font-size: 12px
   .grid:hover
     background-color: rgba(150, 150, 150, 0.80)
-    a.participate
+    a.participate, a.details
       display: block
   .grid-0
     margin-right: 0
   .title
     border-bottom: 5px solid #0080B0
+  .modal-footer
+    a.btn
+      min-height: 0
+      width: 50px
+      float: right
