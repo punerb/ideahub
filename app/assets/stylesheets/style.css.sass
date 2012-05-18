@@ -45,7 +45,7 @@ input.span8, .uneditable-input.span8
   height: 30px
 
 .masthead
-  margin: 20px 0
+  margin: 5px 0
   padding: 25px 0 40px 0
   text-align: center
   background-color: #F5F5F5
@@ -71,7 +71,7 @@ input.span8, .uneditable-input.span8
 .idea-index
   .grid
     width: 215px
-    height: 220px
+    height: 250px
     -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
     -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
@@ -82,7 +82,7 @@ input.span8, .uneditable-input.span8
     border-radius: 5px
     background-color: #F5F5F5 
     a
-      min-height: 190px
+      min-height: 215px
       display: block
       text-decoration: none
       color: teal
@@ -111,18 +111,23 @@ input.span8, .uneditable-input.span8
           top: 0
           right: 0
     a.participate
+      z-index: 1000
+      color: black
+      position: absolute
+      margin-left: 55px
+      margin-top: -100px
+      display: none
+    a.participate
       min-height: 0px
-    a.participate:hover
-      min-height: 0px
-      color: #FFF
-      background-color: teal
     .detail
+      font-weight: bold
       margin-left: 10px
       font-size: 12px
   .grid:hover
-    background-color: #DDD
+    background-color: rgba(150, 150, 150, 0.80)
+    a.participate
+      display: block
   .grid-0
     margin-right: 0
   .title
     border-bottom: 5px solid #0080B0
-
