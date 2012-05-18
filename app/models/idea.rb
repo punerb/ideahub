@@ -16,9 +16,4 @@ class Idea < ActiveRecord::Base
   def format_description
     self.description = RedCloth.new(description, [:lite_mode]).to_html
   end
-
-  after_create do
-    puts "tweeeeeeting"
-    User.tweet("Idea #{title} is just created")
-  end
 end

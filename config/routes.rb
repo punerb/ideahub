@@ -1,7 +1,7 @@
 Ideahub::Application.routes.draw do
 
   # Omniauth
-  match "/signin" => redirect("/auth/twitter"), :as => :signin_services
+  match "/signin" => redirect("/auth/twitter")
   match "/signout" => "services#signout"
   
   match '/auth/:service/callback' => 'services#create' 
@@ -9,8 +9,8 @@ Ideahub::Application.routes.draw do
 
   resources :ideas do
     get 'participate', :on => :member
+    resources :schedules
   end
-  resources :schedules
   
   # used for the demo application only
   resources :users, :only => [:index] do
