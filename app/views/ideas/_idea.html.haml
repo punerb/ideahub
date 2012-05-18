@@ -5,9 +5,13 @@
       %i{class: "#{'favorite' if idea.users.include?(current_user)}"}
     %h6= idea.categories.first.try(:name) or "Category"
     %p= raw idea.description.truncate(125)
-    %h3= pluralize(idea.users.count, "participant")
     - unless idea.users.include?(current_user) 
-      = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn', :remote => true
+      = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn btn-info', :remote => true
   %span.detail
-    %i.icon-calendar>
-    6 Apr'12
+    %span
+      %i.icon-calendar>
+      6 Apr'12
+      |
+    %span
+      %i.icon-user>
+      = pluralize(idea.users.count, "participant")
