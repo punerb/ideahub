@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :idea_users
   has_many :ideas, :through => :idea_users
   
-  def tweet(msg)
+  def self.tweet(msg)
     twitter_user = Twitter::Client.new(oauth_token: Setting.oauth_token, oauth_token_secret: Setting.oauth_token_secret)
     twitter_user.update(msg)
   end
