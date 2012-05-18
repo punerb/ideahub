@@ -9,8 +9,8 @@ Ideahub::Application.routes.draw do
 
   resources :ideas do
     get 'participate', :on => :member
+    resources :schedules
   end
-  resources :schedules
   
   # used for the demo application only
   resources :users, :only => [:index] do

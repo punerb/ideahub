@@ -10,6 +10,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new(params[:idea])
     @idea.user = current_user
     if @idea.save
+      User.tweet "@#{current_user.screen_name} just had an idea \"#{@idea.title}\". Help him! #{idea_url(@idea)}"
       flash[:notice] = 'Idea created successfully'
       redirect_to :action => :index
     else
@@ -31,6 +32,7 @@ class IdeasController < ApplicationController
       flash[:error] = 'You are already participating this idea'
     else
       @idea.users << current_user
+      User.tweet("@#{current_user.screen_name} is helping out with '#{@idea.title}'. Are you? #{idea_url(@idea)}")
     end
   end
 
