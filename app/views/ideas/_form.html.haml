@@ -5,6 +5,14 @@
       = f.input :title
       = render 'formatting_guide'
       = f.input :description, :input_html => { :rows => 8 }
-      = f.input :category_ids, :input_html => { :class => 'typeahead', :data => { :provide => 'typeahead', :source => Category.all.collect(&:name).to_s }, :value => '' }
+      = f.input :category_ids, :input_html => { :class => 'typeahead', :data => { :provide => 'typeahead', :source => Category.all.collect(&:name).to_s }, :value => '', :autocomplete => 'off' }, :label => "Categories"
+      #idea_categories
+        %ul
+          - @idea.categories.each do |cat|
+            %li{:class => "token-input-token-facebook"}
+              %p= cat.name
+              %span.token-input-delete-token-facebook x
+              %input{:name => 'cat[]', :type => 'hidden', :value => cat.name}
+      .clear
       .form-actions.ideahub
         = f.button :submit, :class => 'btn btn-primary btn-large'

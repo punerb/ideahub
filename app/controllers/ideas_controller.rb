@@ -8,6 +8,8 @@ class IdeasController < ApplicationController
   
   def create
     @idea = Idea.new(params[:idea])
+    params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
+
     @idea.user = current_user
     if @idea.save
       User.tweet "@#{current_user.screen_name} just had an idea \"#{@idea.title}\". Help him! #{idea_url(@idea)}"
@@ -18,11 +20,16 @@ class IdeasController < ApplicationController
     end
   end
 
+  # param[:category_ids] will always be empty, so when we call update_attributes, they will be
+  # reset. Hence I have intentionally updated categories in both cases to ensure that 
+  # they get updated only once!
   def update
     if @idea.update_attributes(params[:idea])
+      params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
       flash[:notice] = 'Idea updated'
       redirect_to :action => :index
     else
+      params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
       render :action => :edit
     end
   end
