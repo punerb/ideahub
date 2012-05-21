@@ -5,7 +5,7 @@
       = f.input :title
       = f.input :github, input_html: { value: source_url(@idea.github) }
       = render 'formatting_guide'
-      = f.input :original_desc, :input_html => { :rows => 8 }, :label => "Description" 
+      = f.input :original_desc, :as => :text, :input_html => { :rows => 8 }, :label => "Description" 
       = f.input :category_ids, :input_html => { :class => 'typeahead', :data => { :provide => 'typeahead', :source => Category.all.collect(&:name).to_s }, :value => '', :autocomplete => 'off' }, :label => "Categories"
       #idea_categories
         %ul

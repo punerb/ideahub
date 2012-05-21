@@ -8,6 +8,8 @@ gem 'mysql2'
 gem 'bootstrap-sass'
 gem 'simple_form'
 
+gem 'feather_cms'
+
 group :production do
   gem 'pg'
 end
