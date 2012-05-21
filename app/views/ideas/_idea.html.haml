@@ -4,7 +4,7 @@
       = idea.title.truncate(20)
       %i{class: "#{'favorite' if idea.users.include?(current_user)}"}
     %h6= idea.categories.limit(2).collect(&:name).join(', ') or "Category"
-    %p= raw idea.description.truncate(200)
+    %span= raw idea.description.truncate(200)
     = link_to 'Details', "#idea-detail-#{idea.id}", class: 'details btn btn-info', data: {toggle: 'modal'}
     - unless idea.users.include?(current_user) 
       = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn btn-info', :remote => true
