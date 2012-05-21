@@ -1,5 +1,5 @@
 FeatherCms::Config.init do |c|
-  c.template_store_path = 'public/system/templates'
+  c.template_store_path = '/tmp/templates'
   c.template_store_type = :db 
 
   #Note: For basic authentication
