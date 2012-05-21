@@ -9,11 +9,11 @@ class Idea < ActiveRecord::Base
 
   validates :user_id, :title, :description, :presence => true
   
-  attr_accessible :title, :description, :user_id, :category_ids, :github
+  attr_accessible :title, :original_desc, :user_id, :category_ids, :github
 
   before_save :format_description
 
   def format_description
-    self.description = RedCloth.new(description, [:lite_mode]).to_html
+    self.description = RedCloth.new(original_desc, [:lite_mode]).to_html
   end
 end
