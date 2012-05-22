@@ -20,6 +20,29 @@ Ideahub::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+=begin
+  config.assets.precompile += [
+    'codemirror.css',
+    'codemirror.js',
+    'feather_cms.js',
+    'css.js',
+    'htmlmixed.js',
+    'javascript.js',
+    'xml.js',
+    'dialog.css',
+    'dialog.js',
+    'foldcode.js',
+    'formatting.js',
+    'javascript-hint.js',
+    'match-highlighter.js',
+    'overlay.js',
+    'runmode.js',
+    'search.js',
+    'searchcursor.js',
+    'simple-hint.css',
+    'simple-hint.js' ]
+=end
+
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
