@@ -13,7 +13,7 @@ $(document).ready ->
   $('#idea_category_ids').on 'keypress', (e) ->
     console.log('up')
     if e.keyCode == 13 
-      add_category @
+      e.preventDefault()
       return false
     true
 
