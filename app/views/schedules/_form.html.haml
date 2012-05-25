@@ -1,9 +1,12 @@
 .row.well
-  = simple_form_for @schedule||=Schedule.new, :url => idea_schedules_url(@idea.id), :html => { :class => 'span6 form-horizontal' }, :defaults => { :input_html => { :class => 'input-xlarge' } } do |f|
+  - @schedule ||=Schedule.new
+  - surl =  @schedule.new_record? ? idea_schedules_url(@idea.id) : idea_schedule_url(@idea, @schedule)
+  = simple_form_for @schedule, :url => surl, :html => { :class => 'span6 form-horizontal' }, :defaults => { :input_html => { :class => 'input-xlarge' } } do |f|
     %fieldset
       %legend Details
       = f.hidden_field :idea_id, :value => @idea.id
-      = f.input :scheduled_at, as: :string, html: { class: "date input-append"}, input_html: {data: { "date" => "12/05/2012", "date-format" => "dd/mm/yyyy"} }
+      - s_date = @schedule.new_record? ? Date.today : @schedule.scheduled_at
+      = f.input :scheduled_at, as: :string, input_html: {:value => "#{s_date.strftime('%d/%m/%Y')}", data: { "date-format" => "dd/mm/yyyy"} }
       = f.input :location
       .form-actions.ideahub
         = f.button :submit, :class => 'btn btn-primary btn-large'
