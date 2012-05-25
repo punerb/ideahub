@@ -7,7 +7,7 @@
     %span= raw idea.description.truncate(200)
     = link_to 'Details', "#idea-detail-#{idea.id}", class: 'details btn btn-info', data: {toggle: 'modal'}
     - unless idea.users.include?(current_user) 
-      = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn btn-info', :remote => true
+      = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn btn-info', :remote => user_signed_in?
   %span.detail
     %span
       %i.icon-calendar>
