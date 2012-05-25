@@ -7,7 +7,7 @@ class IdeasController < ApplicationController
   end
 
   def index
-    @ideas = Idea.includes(:users).includes(:categories)
+    @ideas = Idea.includes(:users).includes(:categories).filter_by_category(params[:category])
   end
 
   def create

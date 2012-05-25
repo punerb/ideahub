@@ -22,7 +22,7 @@
       %button{class: "close", data: {:dismiss => "modal"}} x
       %h3= idea.title
     .modal-body
-      %h6= idea.categories.collect(&:name).join(', ')
+      %h6= idea.categories.collect{|c| link_to(c.name, ideas_path(category: c.id), class: 'category_link')}.join(', ').html_safe
       %h6= idea.github
       %br/
       %p= raw idea.description

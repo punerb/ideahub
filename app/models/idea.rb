@@ -13,6 +13,10 @@ class Idea < ActiveRecord::Base
 
   before_save :format_description
 
+  scope :filter_by_category, lambda{ |category|
+    category and joins(:idea_categories).where('idea_categories.category_id = ?', category)
+  }
+
   def format_description
     self.description = RedCloth.new(original_desc, [:lite_mode]).to_html
   end
