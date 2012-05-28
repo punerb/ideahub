@@ -12,7 +12,7 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.new(params[:idea])
-    params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
+    params[:cat] and params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
 
     @idea.user = current_user
     if @idea.save
