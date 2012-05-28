@@ -7,7 +7,11 @@
     %span= raw idea.description.truncate(200)
     = link_to 'Details', "#idea-detail-#{idea.id}", class: 'details btn btn-info', data: {toggle: 'modal'}
     - unless idea.users.include?(current_user) 
-      = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn btn-info', :remote => true
+      %div{:id => "add_not_interested_link_#{idea.id}"}
+        = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn btn-info', :id => "participate_#{idea.id}", :remote => true
+    - else
+      %div{:id => "add_participate_link_#{idea.id}"}
+        = link_to 'Not Interested', not_interested_idea_path(idea), :class => 'participate btn btn-info', :id => "not_interested_#{idea.id}", :remote => true
   %span.detail
     %span
       %i.icon-calendar>
@@ -15,7 +19,8 @@
       |
     %span
       %i.icon-user>
-      = pluralize(idea.users.count, "participant")
+      %span{:id => "participants_count_#{idea.id}"}
+        = pluralize(idea.users.count, "participant")
 
   .modal{style: "display:none", id: "idea-detail-#{idea.id}"}
     .modal-header

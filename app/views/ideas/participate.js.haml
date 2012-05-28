@@ -1,3 +1,6 @@
+$('#idea-#{@idea.id} h3').text("#{pluralize(@idea.users.count, "participant")}")
 $('#idea-#{@idea.id} a h2 i').addClass('favorite')
 $('#idea-#{@idea.id} a.participate.btn').remove()
-$('#idea-#{@idea.id} h3').html("#{pluralize(@idea.users.count, "participant")}")
+$('#add_not_interested_link_#{@idea.id}').html("#{escape_javascript(render :partial => 'ideas/link_for_un_participate')}")
+$('#participants_count_#{@idea.id}').html("#{escape_javascript(render :partial => 'ideas/participants_count')}")
+

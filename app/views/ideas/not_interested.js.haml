@@ -1,0 +1,4 @@
+$('#idea-#{@idea.id} a h2 i').removeClass('favorite')
+$('#add_participate_link_#{@idea.id}').html("#{escape_javascript(render :partial => 'ideas/link_for_participate')}")
+$('#participants_count_#{@idea.id}').html("#{escape_javascript(render :partial => 'ideas/participants_count')}")
+
