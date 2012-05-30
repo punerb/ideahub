@@ -1,19 +1,7 @@
-- if current_user.is_admin
-  %tr{:class => "schedule#{schedule.id}"}
-    %td=link_to schedule.title, idea_url(schedule.idea)
-    %td= schedule.scheduled_at.strftime('%d/%m/%Y')
-    %td= schedule.location
-    %td=link_to 'Edit', edit_idea_schedule_url(schedule.idea, schedule)
-    %td
-      =link_to 'Delete', idea_schedule_url(schedule.idea.id, schedule), :method => :delete, :remote => true if schedule.can_delete?
-- else
-  .grid{class: "grid-#{schedule.id % 4}", id: "schedule-#{schedule.id}"}
-    %a{:href => '#'}
-      %h2{class: "title"}
-        = schedule.title.truncate(20)
-        %i{class: "#{'favorite' if schedule.idea.users.include?(current_user)}"}
-      %h6= schedule.idea.categories.first.try(:name) or "Category"
-      %p
-        = schedule.idea.description.truncate(125)
-        %br
-        = schedule.scheduled_at.strftime('%d/%m/%Y %I:%M %p')
+%tr{:class => "schedule#{schedule.id}"}
+  %td=link_to schedule.title, idea_url(schedule.idea)
+  %td= schedule.scheduled_at.strftime('%d/%m/%Y')
+  %td= schedule.location
+  %td=link_to 'Edit', edit_idea_schedule_url(schedule.idea, schedule)
+  %td
+    =link_to 'Delete', idea_schedule_url(schedule.idea.id, schedule), :method => :delete, :remote => true if schedule.can_delete?
