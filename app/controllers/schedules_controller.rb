@@ -1,8 +1,15 @@
 class SchedulesController < ApplicationController
+  before_filter :admin_user?
   before_filter :get_idea
+  before_filter :get_schedule, :only => [:edit, :update, :destroy]
 
   def index
     @schedules = @idea.schedules
+  end
+
+  def new
+    @schedule = @idea.schedules.new
+    @s_date = Date.today
   end
 
   def create
@@ -17,10 +24,31 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def update
+    @schedule.attributes = params[:schedule]
+    if @schedule.save
+      redirect_to idea_schedules_url(@idea)
+    else
+      render :action => 'edit'
+    end
+  end
+
+  def destroy
+    unless @schedule.scheduled_at > DateTime.now and @schedule.destroy
+      redirect_to idea_schedules_url(@idea, @schedule)
+    end
+  end
+
   private
 
   def get_idea
     @idea = Idea.find_by_id(params[:idea_id])
+  end
+  
+  def get_schedule
+    @schedule = Schedule.find_by_id(params[:id])
+    @s_date = @schedule.scheduled_at
+    @schedule || invalid_url!
   end
 
 end
