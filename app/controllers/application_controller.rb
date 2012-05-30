@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   helper_method :user_signed_in?
+  
+  def admin_user?
+    (user_signed_in? && @current_user.is_admin) || invalid_url!
+  end
 
   private  
   def current_user  
@@ -19,10 +23,6 @@ class ApplicationController < ActionController::Base
       redirect_to signin_path
     end
   end    
-
-  def admin?
-    current_user.is_admin rescue false
-  end
 
   def invalid_url!
     flash[:notice] = 'Invalid URL !!!'
