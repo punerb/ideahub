@@ -1,0 +1,2 @@
+%span{:id => "participants_count_#{@idea.id}"}
+  = pluralize(@idea.users.count, "participant")
