@@ -5,8 +5,4 @@ class WelcomeController < ApplicationController
     @ideas = Idea.limit(4).includes(:categories)
   end
 
-  def get_idea_quote
-    idea_quote = IDEA_SET[rand(IDEA_SET.size)]
-  end
-
 end
