@@ -43,8 +43,8 @@ class IdeasController < ApplicationController
   end
 
   def participate
-    if @idea.users.include?(current_user)
-      flash[:error] = 'You are already participating this idea'
+    if @participant = @idea.users.include?(current_user) 
+      IdeaUser.by_idea_and_user(current_user.id, @idea.id).first.destroy
     else
       @idea.users << current_user
       User.tweet("@#{current_user.screen_name} is helping out with '#{@idea.title}'. Are you? #{idea_url(@idea)}")
