@@ -10,6 +10,10 @@ class IdeasController < ApplicationController
     @ideas = Idea.includes(:users).includes(:categories)
   end
 
+  def new 
+    @schedule = @idea.schedule.new
+  end
+
   def create
     @idea = Idea.new(params[:idea])
     params[:cat] and params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
