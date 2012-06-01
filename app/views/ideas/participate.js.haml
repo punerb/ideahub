@@ -1,3 +1,9 @@
-$('#idea-#{@idea.id} a h2 i').addClass('favorite')
-$('#idea-#{@idea.id} a.participate.btn').remove()
-$('#idea-#{@idea.id} h3').html("#{pluralize(@idea.users.count, "participant")}")
+$('#idea-#{@idea.id} .detail span:last').html("<i class='icon-user'></i> #{pluralize(@idea.users.count, 'participant')}")
+- if @participant 
+  $('#idea-#{@idea.id} a.participate.btn').text('Participate')
+  $('#idea-#{@idea.id} a h2 i').removeClass('favorite')
+  $('.participate.btn.btn-info').text('Participate')
+- else
+  $('#idea-#{@idea.id} a.participate.btn').text('Not Interested')
+  $('.row .participate.btn.btn-info').text('Not Interested')
+  $('#idea-#{@idea.id} a h2 i').addClass('favorite')
