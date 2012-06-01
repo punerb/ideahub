@@ -6,8 +6,7 @@
     %h6= idea.categories.limit(2).collect(&:name).join(', ') or "Category"
     %span= raw idea.description.truncate(200)
     = link_to 'Details', "#idea-detail-#{idea.id}", class: 'details btn btn-info', data: {toggle: 'modal'}
-    - unless idea.users.include?(current_user) 
-      = link_to 'Participate', participate_idea_path(idea), :class => 'participate btn btn-info', :remote => user_signed_in?
+    = participate_button(idea)
   %span.detail
     %span
       %i.icon-calendar>

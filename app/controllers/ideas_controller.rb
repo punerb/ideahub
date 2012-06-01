@@ -2,10 +2,6 @@ class IdeasController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :get_idea, :only => [:update, :edit, :show, :participate]
 
-  def show
-    redirect_to ideas_path 
-  end
-
   def index
     @ideas = Idea.includes(:users).includes(:categories)
   end
