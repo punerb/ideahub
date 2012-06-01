@@ -11,7 +11,7 @@ class IdeasController < ApplicationController
   end
 
   def new 
-    @schedule = @idea.schedule.new
+    @schedule = Idea.new.schedules.new
   end
 
   def create
