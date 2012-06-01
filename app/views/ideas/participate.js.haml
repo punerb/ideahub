@@ -2,6 +2,8 @@ $('#idea-#{@idea.id} .detail span:last').html("<i class='icon-user'></i> #{plura
 - if @participant 
   $('#idea-#{@idea.id} a.participate.btn').text('Participate')
   $('#idea-#{@idea.id} a h2 i').removeClass('favorite')
+  $('.participate.btn.btn-info').text('Participate')
 - else
   $('#idea-#{@idea.id} a.participate.btn').text('Not Interested')
+  $('.row .participate.btn.btn-info').text('Not Interested')
   $('#idea-#{@idea.id} a h2 i').addClass('favorite')
