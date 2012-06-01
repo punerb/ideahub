@@ -1,0 +1,23 @@
+- content_for :title do
+  = @idea.title
+
+.well.grid
+  .row
+    %h2= @idea.title
+    %h6= display_categories(@idea)
+  %br
+  .row
+    = raw(@idea.description)
+  %br
+  .row
+    = participate_button(@idea) 
+
+  .row
+    %h5 Participants
+    = display_participants(@idea)
+  %br
+
+  .row
+    %h6
+      Scheduled #{ @idea.schedules.last.try(:scheduled_at).try(:idea_date) or "soon" }
+  

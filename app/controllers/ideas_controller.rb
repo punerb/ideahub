@@ -2,10 +2,6 @@ class IdeasController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :get_idea, :only => [:update, :edit, :show, :participate]
 
-  def show
-    redirect_to ideas_path 
-  end
-
   def index
     @ideas = Idea.includes(:users).includes(:categories)
   end
@@ -19,6 +15,7 @@ class IdeasController < ApplicationController
     params[:cat] and params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
 
     @idea.user = current_user
+    @idea.users = [current_user]
     if @idea.save
       User.tweet "@#{current_user.screen_name} just had an idea \"#{@idea.title}\". Help him! #{ideas_url}"
       flash[:notice] = 'Idea created successfully'

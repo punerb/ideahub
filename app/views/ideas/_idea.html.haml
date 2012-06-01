@@ -26,8 +26,7 @@
       %br/
       %p= raw idea.description
     .modal-footer
-      - participant =  idea.users.include?(current_user) ? 'Not Interested' : 'Participate'
-      = link_to participant, participate_idea_path(idea), class: 'participate btn btn-info', :remote => user_signed_in?
+      = participate_button(idea)
       - if idea.user == current_user
         =link_to "Edit", edit_idea_path(idea), class: 'btn'
 
