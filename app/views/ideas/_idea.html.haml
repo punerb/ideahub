@@ -1,12 +1,13 @@
 .grid{class: "grid-#{idea.id % 4}", id: "idea-#{idea.id}"}
-  %a{href: '#'}
+  %a{href: idea_path(idea)}
     %h2{class: "title"}
       = idea.title.truncate(20)
       %i{class: "#{'favorite' if idea.users.include?(current_user)}"}
+  %a{href: '#'}
     %h6= idea.categories.limit(2).collect(&:name).join(', ') or "Category"
-    %span= raw idea.description.truncate(200)
-    = link_to 'Details', "#idea-detail-#{idea.id}", class: 'details btn btn-info', data: {toggle: 'modal'}
-    = participate_button(idea)
+  .description
+    %span= raw idea.description.truncate(140)
+    = link_to 'Overview', "#idea-detail-#{idea.id}", class: 'details btn btn-info', data: {toggle: 'modal'}
   %span.detail
     %span
       %i.icon-calendar>
@@ -26,7 +27,7 @@
       %br/
       %p= raw idea.description
     .modal-footer
-      =link_to "Close", "#", class: 'btn', data: {dismiss: "modal"}
+      = participate_button(idea)
       - if idea.user == current_user
         =link_to "Edit", edit_idea_path(idea), class: 'btn'
 
