@@ -15,7 +15,7 @@ class Schedule < ActiveRecord::Base
   private
 
   def schedule_date
-    self.errors[:scheduled_at] = 'Date is invalid' if self.scheduled_at < DateTime.now
+    self.errors[:scheduled_at] = 'Schedule it in the future silly!' if self.scheduled_at < DateTime.now
   end
 
 end
