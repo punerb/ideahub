@@ -9,6 +9,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 
 gem 'feather_cms'
+gem 'tweet-button'
 
 group :production do
   gem 'pg'
