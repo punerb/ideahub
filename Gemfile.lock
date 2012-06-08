@@ -189,6 +189,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    tweet-button (0.1.0)
     twitter (2.2.0)
       activesupport (>= 2.3.9, < 4)
       faraday (~> 0.7)
@@ -227,5 +228,6 @@ DEPENDENCIES
   sass-rails!
   shoulda-matchers
   simple_form
+  tweet-button
   twitter
   uglifier (>= 1.0.3)

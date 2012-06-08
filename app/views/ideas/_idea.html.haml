@@ -8,14 +8,17 @@
   .description
     %span= raw idea.description.truncate(140)
     = link_to 'Overview', "#idea-detail-#{idea.id}", class: 'details btn btn-info', data: {toggle: 'modal'}
-  %span.detail
+  .detail
     %span
       %i.icon-calendar>
       = idea.schedules.last.try(:scheduled_at).try(:idea_date) or "soon"
       |
     %span
       %i.icon-user>
-      = pluralize(idea.users.count, "participant")
+      =# pluralize(idea.users.count, "participant")
+      = idea.users.count
+    %span
+      = tweet_button :via => "joshideahub",:count=> "none", :url => idea_url(idea), :text => "This is an interesting idea! Help out "
 
   .modal{style: "display:none", id: "idea-detail-#{idea.id}"}
     .modal-header
