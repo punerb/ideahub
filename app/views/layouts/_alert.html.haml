@@ -1,0 +1,6 @@
+- if flash.present?
+  .modal#alertModal
+    .alert{:class => "alert-#{flash.keys.first}"}
+      %b= flash[flash.keys.first] 
+:javascript
+  $('#alertModal').fadeToggle(6000)
