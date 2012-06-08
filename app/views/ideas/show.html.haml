@@ -5,6 +5,8 @@
   .row
     %h2= @idea.title
     %h6= display_categories(@idea)
+    %h5= link_to @idea.github, @idea.github, target: '_blank'
+
   %br
   .row
     = raw(@idea.description)
