@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :user_signed_in?, :get_idea_quote
   
-  def admin_user?
-    (user_signed_in? && @current_user.is_admin) || invalid_url!
+  def is_admin?
+    current_user.try(:is_admin) || invalid_url!
   end
 
   private  
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end    
 
   def invalid_url!
-    flash[:notice] = 'Invalid URL !!!'
+    flash[:error] = 'Invalid URL !!!'
     redirect_to root_url and return
   end
   
