@@ -14,7 +14,6 @@
       |
     %span
       %i.icon-user>
-      =# pluralize(idea.users.count, "participant")
       = idea.users.count
     %span
       = tweet_button :via => "joshideahub",:count=> "none", :url => idea_url(idea), :text => "This is an interesting idea! Help out "
