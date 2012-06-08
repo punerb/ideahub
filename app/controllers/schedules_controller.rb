@@ -20,6 +20,7 @@ class SchedulesController < ApplicationController
       end
       redirect_to idea_schedules_url(@idea)
     else
+      @s_date = Date.today
       render :action => 'new'
     end
   end
