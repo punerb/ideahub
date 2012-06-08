@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end    
 
   def invalid_url!
-    flash[:info] = 'Invalid URL !!!'
+    flash[:error] = 'Invalid URL !!!'
     redirect_to root_url and return
   end
   
