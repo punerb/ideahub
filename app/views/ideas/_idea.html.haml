@@ -22,7 +22,7 @@
       %h3= idea.title
     .modal-body
       %h6= idea.categories.collect(&:name).join(', ')
-      %h6= idea.github
+      %h5= link_to idea.github, idea.github, target: '_blank'
       %br/
       %p= raw idea.description
     .modal-footer
