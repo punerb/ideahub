@@ -9,7 +9,7 @@ module IdeasHelper
   end
 
   def participate_button(idea)
-    participant =  idea.users.include?(current_user) ? 'Not Anymore' : 'Participate'
+    participant =  idea.users.include?(current_user) ? 'Leave' : 'Participate'
     link_to participant, participate_idea_path(idea), :class => 'participate btn btn-info', :remote => true
   end
 
