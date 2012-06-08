@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_filter :admin_user?
+  before_filter :is_admin?
   before_filter :get_idea
   before_filter :get_schedule, :only => [:edit, :update, :destroy]
 
