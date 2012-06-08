@@ -1,3 +1,0 @@
-2012/06/01 20:02:31 [error] 5661#0: *4 "/users/gautam/work/ideahub/app/assets/stylesheets/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "HEAD / HTTP/1.1", host: "0.0.0.0"
-2012/06/01 20:02:42 [error] 5661#0: *5 "/users/gautam/work/ideahub/app/assets/stylesheets/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:3000"
-2012/06/01 20:02:44 [error] 5661#0: *5 "/users/gautam/work/ideahub/app/assets/stylesheets/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:3000"
