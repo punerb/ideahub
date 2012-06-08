@@ -38,8 +38,10 @@
                 = link_to '', signin_path, class: 'twitter-image pull-right', title: 'Sign in with Twitter'
     - if params[:controller] == 'ideas' && params[:action] == 'index'  
       .grid.clearfix#wrapper
+        = render 'layouts/alert'
         = yield
     -else
       .container
+        = render 'layouts/alert'
         = yield
       
