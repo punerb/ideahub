@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user
-  helper_method :user_signed_in?
+  helper_method :current_user, :user_signed_in?, :get_idea_quote
   
   def is_admin?
     current_user.try(:is_admin) || invalid_url!
@@ -25,7 +24,11 @@ class ApplicationController < ActionController::Base
   end    
 
   def invalid_url!
-    flash[:error] = 'Invalid URL !!!'
+    flash[:info] = 'Invalid URL !!!'
     redirect_to root_url and return
+  end
+  
+  def get_idea_quote
+    idea_quote = IDEA_SET[rand(IDEA_SET.size)]
   end
 end

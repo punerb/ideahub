@@ -72,6 +72,20 @@ input.span8, .uneditable-input.span8
 
 .idea-index
   .grid
+    .description
+      min-height: 155px
+      padding: 5px
+      span 
+        display: block
+        font-size: 14px
+        font-weight: bold
+        margin-top: 5px
+        color: #000
+        height: 85px
+    .description:hover
+      background-color: rgba(150, 150, 150, 0.80)
+      a.participate, a.details
+        display: block
     width: 215px
     height: 250px
     -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
@@ -80,11 +94,10 @@ input.span8, .uneditable-input.span8
     display: inline
     float: left
     position: relative
-    margin: 10px 25px 10px 0
+    margin: 10px 20px 10px 0
     border-radius: 5px
     background-color: #F5F5F5 
     a
-      min-height: 215px
       display: block
       text-decoration: none
       color: teal
@@ -122,45 +135,30 @@ input.span8, .uneditable-input.span8
       display: none
       min-height: 0px
     a.details
-      margin-top: -130px
-      margin-left: 70px
+      margin-top: -25px
+      margin-left: 55px
     .detail
       font-weight: bold
       margin-left: 10px
       font-size: 12px
   .grid:hover
-    background-color: rgba(150, 150, 150, 0.80)
     a.participate, a.details
       display: block
-  .grid-0
-    margin-right: 0
+  .grid-3
+    margin-right: 0 important
   .title
     border-bottom: 5px solid #0080B0
   .modal-footer
+    height: 30px
     a.btn
       min-height: 0
       width: 50px
       float: right
-.alert 
-  color: #FFFFFF
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
-  border: none
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
-  background-repeat: repeat-x
-.alert-alert, .alert-warning
-  background-color: #FAA732
-  background-image: -moz-linear-gradient(center top , #FBB450, #F89406)
-  color:black
-.alert-error
-  background-color: #DA4F49
-  background-image: -moz-linear-gradient(center top , #EE5F5B, #BD362F)
-.alert-success
-  background-color: #5BB75B
-  background-image: -moz-linear-gradient(center top , #62C462, #51A351)
-.alert-notice
-  background-color: #49AFCD
-  background-image: -moz-linear-gradient(center top , #5BC0DE, #2F96B4)
-.modal
-  margin: -330px 0 0 -490px
-  width: 975px
+    a.participate, a.details
+      width: 100px 
+      display: block
+      margin: 0px
+#alertModal
+  margin: -330px 0 0 -285px
+  width: 575px
   text-align: center
