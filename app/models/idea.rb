@@ -13,6 +13,8 @@ class Idea < ActiveRecord::Base
 
   before_save :format_description
 
+  delegate :name, to: :user, prefix: true
+
   def format_description
     self.description = RedCloth.new(original_desc, [:lite_mode]).to_html
   end

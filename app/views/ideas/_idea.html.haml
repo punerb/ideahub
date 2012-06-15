@@ -25,8 +25,14 @@
       %h3= idea.title
     .modal-body
       %h6= idea.categories.collect(&:name).join(', ')
-      %h5= link_to idea.github, idea.github, target: '_blank'
-      %br/
+      %h5
+        Github URL: 
+        = link_to idea.github, idea.github, target: '_blank'
+      %h5.marTop10
+        Idea By:
+        =  idea.user_name
+      %h5.marTop10
+        Description
       %p= raw idea.description
     .modal-footer
       = participate_button(idea)
