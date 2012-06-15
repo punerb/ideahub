@@ -17,7 +17,7 @@
       =# pluralize(idea.users.count, "participant")
       = idea.users.count
     %span
-      = tweet_button :via => "joshideahub",:count=> "none", :url => idea_url(idea), :text => "This is an interesting idea! Help out "
+      = tweet_button :via => "punerb",:count=> "none", :url => idea_url(idea), :text => "This is an interesting idea! Help out "
 
   .modal{style: "display:none", id: "idea-detail-#{idea.id}"}
     .modal-header
