@@ -25,12 +25,16 @@
       %button{class: "close", data: {:dismiss => "modal"}} x
       %h3= idea.title
     .modal-body
-      %h6= idea.categories.collect(&:name).join(', ')
+      %h5
+        Categories:
+      %h6
+        = idea.categories.collect(&:name).join(', ')
       %h5
         Github URL: 
         = link_to idea.github, idea.github, target: '_blank'
       %h5.marTop10
         Idea By:
+      %p
         =  idea.user_name
       %h5.marTop10
         Description
