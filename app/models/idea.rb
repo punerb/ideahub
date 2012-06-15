@@ -8,8 +8,8 @@ class Idea < ActiveRecord::Base
   has_many :categories, :through => :idea_categories
 
   validates :user_id, :title, :original_desc, :presence => true
-  
-  attr_accessible :title, :original_desc, :user_id, :category_ids, :github
+
+  attr_accessible :title, :original_desc, :user_id, :category_ids, :github, :description
 
   before_save :format_description
 
