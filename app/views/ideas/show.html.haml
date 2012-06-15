@@ -1,6 +1,8 @@
 - content_for :title do
   = @idea.title
 
+= javascript_include_tag 'http://zor.livefyre.com/wjs/v1.0/javascripts/livefyre_init.js'
+
 .well.grid
   .row
     %h2= @idea.title
@@ -22,4 +24,7 @@
   .row
     %h6
       Scheduled #{ @idea.schedules.last.try(:scheduled_at).try(:idea_date) or "soon" }
-  
+
+  .row
+    :javascript
+      var fyre = LF({site_id: 305993});
