@@ -31,3 +31,7 @@ end
   idea.save
 end
 
+20.times do |i|
+  ## Randomly assign few categories to the few ideas.
+  IdeaCategory.create({idea_id: Idea.all.shuffle.first.id, category_id: Category.all.shuffle.first.id})
+end
