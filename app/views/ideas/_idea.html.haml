@@ -3,20 +3,21 @@
     %h2{class: "title"}
       = idea.title.truncate(20)
       %i{class: "#{'favorite' if idea.users.include?(current_user)}"}
-  %h6= idea.categories.limit(2).collect{|c| content_tag(:l, c.name, :style => 'cursor:pointer') }.join(', ').html_safe or "Category"
+  %h6.categoriesNames 
+    = idea.categories.empty? ? 'No Categories' : idea.categories.limit(2).collect{|c| content_tag(:l, c.name, :style => 'cursor:pointer') }.join(', ').html_safe
   .description
     %span= raw idea.description.truncate(140)
     = link_to 'Overview', "#idea-detail-#{idea.id}", class: 'details btn btn-info', data: {toggle: 'modal'}
   .detail
-    %span
+    .floatLeft
       %i.icon-calendar>
       = idea.schedules.last.try(:scheduled_at).try(:idea_date) or "soon"
       |
-    %span
+    .floatLeft
       %i.icon-user>
       =# pluralize(idea.users.count, "participant")
       = idea.users.count
-    %span
+    .floatRight
       = tweet_button :via => "joshideahub",:count=> "none", :url => idea_url(idea), :text => "This is an interesting idea! Help out "
 
   .modal{style: "display:none", id: "idea-detail-#{idea.id}"}
@@ -25,8 +26,14 @@
       %h3= idea.title
     .modal-body
       %h6= idea.categories.collect(&:name).join(', ')
-      %h5= link_to idea.github, idea.github, target: '_blank'
-      %br/
+      %h5
+        Github URL: 
+        = link_to idea.github, idea.github, target: '_blank'
+      %h5.marTop10
+        Idea By:
+        =  idea.user_name
+      %h5.marTop10
+        Description
       %p= raw idea.description
     .modal-footer
       = participate_button(idea)
