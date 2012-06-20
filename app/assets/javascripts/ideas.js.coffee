@@ -5,6 +5,12 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready -> 
+  #Idea filteration according to category
+  $("h6 l").click ->
+    cat = $(this).html()
+    $(".idea-box").hide()
+    $("." + cat).show()
+
   # Where there is change in the typeahead text box
   $('#idea_category_ids').on 'change', (e) -> 
     add_category @

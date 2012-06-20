@@ -1,8 +1,2 @@
 .container.idea-index
   = render @ideas, participate: true
-:javascript
-  $('h6 l').click(function(){
-    cat = $(this).html(); 
-    $('.idea-box').hide();
-    $('.'+cat).show(); 
-  });
