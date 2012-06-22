@@ -1,4 +1,4 @@
-$('#idea-#{@idea.id} .detail span:last').html("<i class='icon-user'></i> #{pluralize(@idea.users.count, 'participant')}")
+$('#idea_count_#{@idea.id}').text("#{@idea.users.count}")
 - if @participant 
   $('#idea-#{@idea.id} a.participate.btn').text('Participate')
   $('#idea-#{@idea.id} a h2 i').removeClass('favorite')
