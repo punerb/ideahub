@@ -1,0 +1,40 @@
+<header>
+<% status = params[:status] || @feather_page.status %> 
+<div class="subnav">
+  <ul class="nav nav-pills">
+    <li class='<%= status == 'published' ? 'active ' : ''  %>'>
+      <%= link_to 'Published Page', feather_page_path('credits',:published) %> 
+    </li>
+    <li class='<%= status == 'draft' ? 'active ' : ''  %>'>
+      <%= link_to 'Draft Page', feather_page_path('credits', :draft) %>
+    </li>
+    <li>
+    <%= link_to 'Preview', feather_page_preview_path('credits', status), target: '_blank' unless @feather_page.new_record? %>
+    </li>
+  </ul>
+</div>
+<hr>
+</header>
+<div class="row">
+  <div class="span12">
+    <%= form_for(@feather_page, :url => feather_page_path('credits')) do |f| %>
+      <div class="control-group">
+        <label class="control-label" for="status">Status</label>
+        <div class="controls">
+          <%= f.select :status, [:draft, :published]  %> 
+        </div>
+        <label class="control-label" for="layout">Layout</label>
+        <div class="controls">
+          <%= f.select :layout, FeatherCms::Config.layouts  %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="textarea">Content</label>
+        <div class="controls">
+          <%= f.text_area :content, :class => 'codemirror_feather_cms input-xlarge span12', :row => "20" %>
+        </div>
+      </div>
+      <%= f.submit "Save", :class => 'btn btn-primary btn-large' %>
+    <% end %>
+  </div>
+</div>

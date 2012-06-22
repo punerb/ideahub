@@ -5,11 +5,19 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.includes(:users).includes(:categories)
   end
-  
+
+  def new 
+    @schedule = Idea.new.schedules.new
+  end
+
   def create
     @idea = Idea.new(params[:idea])
+    params[:cat] and params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
+
     @idea.user = current_user
+    @idea.users = [current_user]
     if @idea.save
+      User.tweet "@#{current_user.screen_name} just had an idea \"#{@idea.title}\". Help him! #{ideas_url}"
       flash[:notice] = 'Idea created successfully'
       redirect_to :action => :index
     else
@@ -17,21 +25,26 @@ class IdeasController < ApplicationController
     end
   end
 
+  # param[:category_ids] will always be empty, so when we call update_attributes, they will be
+  # reset. Hence I have intentionally updated categories in both cases to ensure that 
+  # they get updated only once!
   def update
     if @idea.update_attributes(params[:idea])
+      params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
       flash[:notice] = 'Idea updated'
       redirect_to :action => :index
     else
+      params[:cat].each { |cat| @idea.categories << Category.find_or_create_by_name(cat) }
       render :action => :edit
     end
   end
 
   def participate
-    if @idea.users.include?(current_user)
-      flash[:error] = 'You are already participating this idea'
+    if @participant = @idea.users.include?(current_user) 
+      IdeaUser.by_idea_and_user(current_user.id, @idea.id).first.destroy
     else
       @idea.users << current_user
-      User.tweet("@#{current_user.screen_name} has just participated to '#{@idea.title}'")
+      User.tweet("@#{current_user.screen_name} is helping out with '#{@idea.title}'. Are you? #{idea_url(@idea)}")
     end
   end
 

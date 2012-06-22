@@ -25,6 +25,8 @@ body
       padding-bottom: 5px
     .brand:hover
       color: #777
+  .alert
+    margin-bottom: 0px
 
 .ideahub.form-actions
   background-color: #F5F5F5
@@ -32,7 +34,7 @@ body
 
 .twitter-image
   width: 90px
-  margin-top: 15px
+  margin-top: 10px
   background: url('/assets/twitter_logo_top_bar.png') no-repeat 0 0
 
 .strip-background
@@ -45,7 +47,7 @@ input.span8, .uneditable-input.span8
   height: 30px
 
 .masthead
-  margin: 20px 0
+  margin: 5px 0
   padding: 25px 0 40px 0
   text-align: center
   background-color: #F5F5F5
@@ -70,28 +72,42 @@ input.span8, .uneditable-input.span8
 
 .idea-index
   .grid
+    .description
+      min-height: 150px
+      padding: 5px
+      span 
+        display: block
+        font-size: 14px
+        font-weight: bold
+        margin-top: 5px
+        color: #000
+        height: 85px
+    .description:hover
+      background-color: rgba(150, 150, 150, 0.80)
+      a.participate, a.details
+        display: block
     width: 215px
-    height: 220px
+    height: 250px
     -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
     -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1)
     display: inline
     float: left
     position: relative
-    margin: 10px 25px 10px 0
+    margin: 10px 20px 10px 0
     border-radius: 5px
     background-color: #F5F5F5 
     a
-      min-height: 190px
       display: block
       text-decoration: none
       color: teal
-      h2, h6, h3, p
+      h2, h6, h3, span
         padding-left: $ideaBoxMarginLeft
       h2
         color: #555
         height: 41px
-      p 
+      span 
+        display: block
         font-size: 14px
         font-weight: bold
         margin-top: 5px
@@ -110,19 +126,42 @@ input.span8, .uneditable-input.span8
           position: absolute
           top: 0
           right: 0
-    a.participate
+    a.participate, a.details
+      z-index: 1000
+      color: black
+      position: absolute
+      margin-left: 55px
+      margin-top: -70px
+      display: none
       min-height: 0px
-    a.participate:hover
-      min-height: 0px
-      color: #FFF
-      background-color: teal
+    a.details
+      margin-top: -25px
+      margin-left: 55px
     .detail
+      font-weight: bold
       margin-left: 10px
       font-size: 12px
+      height: 25px
+      span
+        height: 18px
   .grid:hover
-    background-color: #DDD
-  .grid-0
-    margin-right: 0
+    a.participate, a.details
+      display: block
+  .grid-3
+    margin-right: 0 important
   .title
     border-bottom: 5px solid #0080B0
-
+  .modal-footer
+    height: 30px
+    a.btn
+      min-height: 0
+      width: 50px
+      float: right
+    a.participate, a.details
+      width: 100px 
+      display: block
+      margin: 0px
+#alertModal
+  margin: -330px 0 0 -285px
+  width: 575px
+  text-align: center

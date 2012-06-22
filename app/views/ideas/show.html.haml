@@ -1,0 +1,30 @@
+- content_for :title do
+  = @idea.title
+
+= javascript_include_tag 'http://zor.livefyre.com/wjs/v1.0/javascripts/livefyre_init.js'
+
+.well.grid
+  .row
+    %h2= @idea.title
+    %h6= display_categories(@idea)
+    %h5= link_to @idea.github, @idea.github, target: '_blank'
+
+  %br
+  .row
+    = raw(@idea.description)
+  %br
+  .row
+    = participate_button(@idea) 
+
+  .row.participants
+    %h5 Participants
+    = display_participants(@idea)
+  %br
+
+  .row
+    %h6
+      Scheduled #{ @idea.schedules.last.try(:scheduled_at).try(:idea_date) or "soon" }
+
+  .row
+    :javascript
+      var fyre = LF({site_id: 305993});

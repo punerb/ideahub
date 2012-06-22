@@ -1,0 +1,11 @@
+<div class="row">
+  <ol>
+    <% @pages.each do |page| %>
+      <li>
+        <strong>
+        <%= link_to "#{page.name.humanize}(#{page.status})", feather_page_path(page.name, page.status) %>
+        </strong>
+      </li>
+    <% end %>
+  </ol>
+</div>

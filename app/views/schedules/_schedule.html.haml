@@ -1,4 +1,7 @@
-%tr
-  %td= schedule.title
-  %td= schedule.scheduled_at
+%tr{:class => "schedule#{schedule.id}"}
+  %td=link_to schedule.title, idea_url(schedule.idea)
+  %td= schedule.scheduled_at.strftime('%d/%m/%Y')
   %td= schedule.location
+  %td=link_to 'Edit', edit_idea_schedule_url(schedule.idea, schedule)
+  %td
+    =link_to 'Delete', idea_schedule_url(schedule.idea.id, schedule), :method => :delete, :remote => true if schedule.can_delete?

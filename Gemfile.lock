@@ -119,10 +119,26 @@ GEM
       multipart-post (~> 1.1)
       rack (~> 1.1)
     fastthread (1.0.7)
+<<<<<<< HEAD
     ffi (1.0.11)
     gherkin (2.10.0)
       json (>= 1.4.6)
     git (1.2.5)
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    feather_cms (0.0.4)
+>>>>>>> 3823ac637ad425ca6e2c09ba6b09e6f4100f9d49
+=======
+    feather_cms (0.0.4)
+>>>>>>> Stashed changes
+=======
+    feather_cms (0.0.4)
+>>>>>>> Stashed changes
+=======
+    feather_cms (0.0.4)
+>>>>>>> Stashed changes
     haml (3.1.4)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -238,6 +254,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    tweet-button (0.1.0)
     twitter (2.2.0)
       activesupport (>= 2.3.9, < 4)
       faraday (~> 0.7)
@@ -247,6 +264,8 @@ GEM
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    watir-webdriver (0.6.1)
+      selenium-webdriver (>= 2.18.0)
     webrat (0.7.3)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -268,6 +287,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails (= 1.4.0)
   faker
+  feather_cms
   haml
   haml-rails
   heroku
@@ -287,7 +307,12 @@ DEPENDENCIES
   selenium-webdriver
   shoulda-matchers
   simple_form
+<<<<<<< HEAD
   simplecov
+=======
+  tweet-button
+>>>>>>> 3823ac637ad425ca6e2c09ba6b09e6f4100f9d49
   twitter
   uglifier (>= 1.0.3)
+  watir-webdriver (~> 0.6.1)
   webrat (= 0.7.3)

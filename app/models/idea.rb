@@ -7,18 +7,13 @@ class Idea < ActiveRecord::Base
   has_many :idea_categories, :dependent => :destroy
   has_many :categories, :through => :idea_categories
 
-  validates :user_id, :title, :description, :presence => true
+  validates :user_id, :title, :original_desc, :presence => true
   
-  attr_accessible :title, :description, :user_id, :category_ids
+  attr_accessible :title, :original_desc, :user_id, :category_ids, :github
 
   before_save :format_description
 
   def format_description
-    self.description = RedCloth.new(description, [:lite_mode]).to_html
-  end
-
-  after_create do
-    puts "tweeeeeeting"
-    User.tweet("Idea #{title} is just created")
+    self.description = RedCloth.new(original_desc, [:lite_mode]).to_html
   end
 end

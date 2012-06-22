@@ -2,18 +2,20 @@ class Schedule < ActiveRecord::Base
   belongs_to :idea
   validates :idea_id, :scheduled_at, :location, :presence => true
 
+  validate :schedule_date
+
   delegate :title, :to => :idea, :prefix => false, :allow_nil => true
 
   attr_accessible :idea_id, :scheduled_at, :location
 
-  after_create do
-    get_participants.each do |p|
-      User.tweet("@#{p.screen_name} new schedule is created in '#{idea.title}'")
-    end
+  def can_delete?
+    scheduled_at > DateTime.now
   end
 
   private
-    def get_participants
-      idea.users
-    end
+
+  def schedule_date
+    self.errors[:scheduled_at] = 'Schedule it in the future silly!' if self.scheduled_at < DateTime.now
+  end
+
 end

@@ -8,6 +8,9 @@ gem 'mysql2'
 gem 'bootstrap-sass'
 gem 'simple_form'
 
+gem 'feather_cms'
+gem 'tweet-button'
+
 group :production do
   gem 'pg'
 end
@@ -43,6 +46,7 @@ group :test do
   gem "selenium"
   gem "selenium-client"
   gem "selenium-webdriver"
+  gem "watir-webdriver", "~> 0.6.1"
 end
 
 # To use ActiveModel has_secure_password

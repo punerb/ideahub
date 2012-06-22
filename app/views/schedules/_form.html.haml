@@ -1,13 +1,11 @@
 .row.well
-  = simple_form_for @schedule||=Schedule.new, :url => idea_schedules_url(@idea.id), :html => { :class => 'span6 form-horizontal' }, :defaults => { :input_html => { :class => 'input-xlarge' } } do |f|
+  = simple_form_for [@idea, @schedule], :html => { :class => 'span6 form-horizontal' }, :defaults => { :input_html => { :class => 'input-xlarge' } } do |f|
     %fieldset
       %legend Details
-      = f.hidden_field :idea_id, :value => @idea.id
-      = f.input :scheduled_at, :as => :string
+      = f.input :scheduled_at, as: :string, input_html: {:value => "#{@s_date.strftime('%d/%m/%Y')}", data: { "date-format" => "dd/mm/yyyy"} }
       = f.input :location
       .form-actions.ideahub
         = f.button :submit, :class => 'btn btn-primary btn-large'
+
 :javascript
-  $('#schedule_scheduled_at').datetimepicker({
-    dateFormat: 'dd/mm/yy'
-  });
+  $('#schedule_scheduled_at').datepicker();

@@ -1,3 +1,4 @@
+@import "codemirror"
 p 
   margin: 0 0 9px
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -14,15 +15,15 @@ h2
   font-size: 20px
   color: #0084b4
 
-.grid-1, .grid-2, .grid-3, .grid-4 
+.grid-0, .grid-1, .grid-2, .grid-3 
   display: inline
   float: left
   position: relative
   margin-left: 10px
   margin-right: 10px
   
-.grid .grid-1 
-  width: 220px
+.grid .grid-3 
+  margin-right: 0
 
 .clearfix 
   *zoom: 1
@@ -102,3 +103,39 @@ div.header, li.repo
 .idea
   cursor: pointer 
   cursor: hand
+
+#idea_categories
+  margin-left: 160px
+  ul
+    margin-left: 0px
+    min-height: 15px
+  li.token-input-token-facebook 
+    overflow: hidden 
+    height: auto !important 
+    height: 15px
+    margin: 3px
+    padding: 1px 3px
+    background-color: #eff2f7
+    color: #000
+    cursor: default
+    border: 1px solid #ccd5e4
+    font-size: 11px
+    border-radius: 5px
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+    float: left
+    white-space: nowrap
+    p
+      display: inline
+      padding: 0
+      margin: 0
+    span
+      color: #a6b3cf
+      margin-left: 5px
+      font-weight: bold
+      cursor: pointer
+
+.participants
+  a
+    margin-right: 2px
+
