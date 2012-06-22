@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  before_filter :get_idea, :only => [:update, :edit, :show, :participate, :not_interested]
+  before_filter :get_idea, :only => [:update, :edit, :show, :participate]
 
   def index
     @ideas = Idea.includes(:users).includes(:categories)
@@ -46,11 +46,6 @@ class IdeasController < ApplicationController
       @idea.users << current_user
       User.tweet("@#{current_user.screen_name} is helping out with '#{@idea.title}'. Are you? #{idea_url(@idea)}")
     end
-  end
-
-  def not_interested
-    idea_user = IdeaUser.where(:user_id => current_user.id, :idea_id => @idea.id).first
-    idea_user.destroy unless idea_user.nil?
   end
 
   private
