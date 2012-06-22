@@ -18,6 +18,7 @@ Ideahub::Application.routes.draw do
 
   resources :ideas do
     get 'participate', :on => :member
+    get 'not_interested', :on => :member
     resources :schedules
   end
   
