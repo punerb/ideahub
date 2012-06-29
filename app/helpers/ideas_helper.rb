@@ -13,7 +13,7 @@ module IdeasHelper
       participant =  idea.users.include?(current_user) ? 'Leave' : 'Participate'
       link_to participant, participate_idea_path(idea), :class => 'participate btn btn-info', :remote => true
     else
-      link_to 'Participate', participate_idea_path(idea), :class => 'participate btn btn-info', onclick: "alert('You need to login with twitter to participate.'); return false;"
+      link_to 'Participate', participate_idea_path(idea), :class => 'participate btn btn-info', onclick: "alert('You need to login to participate,you will be redirected to twitter authentication');window.location='/auth/twitter'; return false;"
     end
   end
 
