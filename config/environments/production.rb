@@ -20,11 +20,6 @@ Ideahub::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
   
-  config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-    r301 %r{.*}, 'http://puneruby.org$&', :if => Proc.new {|rack_env|
-    rack_env['SERVER_NAME'] != 'puneruby.org'
-    }
-  end
 
 =begin
 config.assets.precompile += [

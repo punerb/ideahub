@@ -61,5 +61,11 @@ module Ideahub
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-  end
+
+    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+      r301 %r{.*}, 'http://puneruby.org$&', :if => Proc.new {|rack_env|
+      rack_env['SERVER_NAME'] != 'puneruby.org'
+    }
+    end
+ end
 end
