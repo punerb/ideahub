@@ -15,7 +15,6 @@
       |
     .floatLeft
       %i.icon-user>
-      =# pluralize(idea.users.count, "participant")
       %span{:id => "idea_count_#{idea.id}"} #{idea.users.count}
     .floatRight
       = tweet_button :via => "punerb",:count=> "none", :url => idea_url(idea), :text => "This is an interesting idea! Help out "
