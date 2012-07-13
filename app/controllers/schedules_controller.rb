@@ -16,7 +16,7 @@ class SchedulesController < ApplicationController
     @schedule = @idea.schedules.new(params[:schedule])
     if @schedule.save
       @schedule.idea.users.each do |p|
-        User.tweet("@#{p.screen_name}, do come to #{@schedule.location}. We're hacking on '#{@schedule.idea.title}' on #{@schedule.scheduled_at.idea_at}. #{idea_url(@schedule.idea)}")
+        User.tweet("@#{p.screen_name}, do come to #{@schedule.location}. We're hacking on '#{@schedule.idea.title}' on #{@schedule.scheduled_at.idea_date} at 5.30pm. #{idea_url(@schedule.idea)}")
       end
       redirect_to idea_schedules_url(@idea)
     else
