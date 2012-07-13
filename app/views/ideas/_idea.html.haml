@@ -1,7 +1,7 @@
 .grid{class: "idea-box grid-#{idea.id % 4} #{idea.categories.collect(&:name).join(' ')}", id: "idea-#{idea.id}"}
   %a{href: idea_path(idea)}
     %h2{class: "title"}
-      = idea.title.truncate(20)
+      = idea.title.truncate(17)
       %i{class: "#{'favorite' if idea.users.include?(current_user)}"}
   %h6.categoriesNames 
     = idea.categories.empty? ? 'No Categories' : idea.categories.limit(2).collect{|c| content_tag(:l, c.name, :style => 'cursor:pointer') }.join(', ').html_safe
