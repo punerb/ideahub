@@ -20,7 +20,6 @@ Ideahub::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
   
-
 =begin
 config.assets.precompile += [
 'codemirror.css',
@@ -42,7 +41,7 @@ config.assets.precompile += [
   'searchcursor.js',
   'simple-hint.css',
   'simple-hint.js' ]
-  =end
+=end
 
 # Defaults to Rails.root.join("public/assets")
 # config.assets.manifest = YOUR_PATH
