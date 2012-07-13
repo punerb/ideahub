@@ -15,9 +15,10 @@
       |
     .floatLeft
       %i.icon-user>
-      = idea.users.count
+      =# pluralize(idea.users.count, "participant")
+      %span{:id => "idea_count_#{idea.id}"} #{idea.users.count}
     .floatRight
-      = tweet_button :via => "joshideahub",:count=> "none", :url => idea_url(idea), :text => "This is an interesting idea! Help out "
+      = tweet_button :via => "punerb",:count=> "none", :url => idea_url(idea), :text => "This is an interesting idea! Help out "
 
   .modal{style: "display:none", id: "idea-detail-#{idea.id}"}
     .modal-header
