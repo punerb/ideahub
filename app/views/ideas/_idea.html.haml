@@ -16,7 +16,7 @@
     .floatLeft
       %i.icon-user>
       = idea.users.count
-    %span
+    .floatRight
       = tweet_button :via => "joshideahub",:count=> "none", :url => idea_url(idea), :text => "This is an interesting idea! Help out "
 
   .modal{style: "display:none", id: "idea-detail-#{idea.id}"}
