@@ -19,7 +19,7 @@ When /^I click "(.*?)" link$/ do |arg1|
 	page.should have_xpath('/html/body/div[2]/header/div/a')
 end
 
-Then /^I should see ideas$/ do
+Then /^I should see created ideas$/ do
 	visit "/ideas"
 end
 
