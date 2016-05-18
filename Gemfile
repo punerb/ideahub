@@ -41,6 +41,13 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails', '1.4.0'
+  gem "cucumber-rails"
+  gem 'simplecov', :require => false
+  gem "capybara"
+  gem "selenium"
+  gem "selenium-client"
+  gem "selenium-webdriver"
+  gem "watir-webdriver", "~> 0.6.1"
 end
 
 # To use ActiveModel has_secure_password
@@ -62,4 +69,5 @@ gem 'newrelic_rpm'
 group :development do
   gem 'heroku'
   gem 'passenger'
+  gem 'webrat', '0.7.3'
 end
