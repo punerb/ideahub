@@ -44,7 +44,7 @@ class IdeasController < ApplicationController
       IdeaUser.by_idea_and_user(current_user.id, @idea.id).first.destroy
     else
       @idea.users << current_user
-      User.tweet("@#{current_user.screen_name} is helping out with '#{@idea.title}'. Are you? #{idea_url(@idea)}")
+      User.tweet("@#{current_user.screen_name} is helping out with '#{@idea.title}' on #{Time.now.strftime ('%d-%m-%Y %I:%M %p')}. Are you? #{idea_url(@idea)}")
     end
   end
 

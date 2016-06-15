@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   
   def self.tweet(msg)
     if Rails.env.production?
-      twitter.update(msg)
+      twitter.update(msg) rescue nil
     else
       puts "TWEET: #{msg}"
     end
